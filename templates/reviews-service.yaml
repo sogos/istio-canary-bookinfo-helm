@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bookinfo.fullname" . }}-reviews
+  labels:
+    {{- include "bookinfo.reviews.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.reviews.type }}
+  ports:
+    - port: {{ .Values.service.reviews.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "bookinfo.reviews.selectorLabels" . | nindent 4 }}
