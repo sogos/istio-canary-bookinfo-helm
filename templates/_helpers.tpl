@@ -54,13 +54,13 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 Create the name of the service account to use
 */}}
 {{- define "bookinfo.reviews.serviceAccountName" -}}
+{{- $name := (include "bookinfo.fullname" .) }}
 {{- if .Values.serviceAccount.reviews.create }}
-{{- default (include "bookinfo.fullname" .) .Values.serviceAccount.reviews.name }}
+{{- default (printf "%s-%s" $name "reviews-sa") .Values.serviceAccount.reviews.name }}
 {{- else }}
-{{- default "reviews-sa" .Values.serviceAccount.reviews.name }}
+{{- default (printf "%s-%s" $name "reviews-sa") .Values.serviceAccount.reviews.name }}
 {{- end }}
 {{- end }}
-
 
 
 {{/*
