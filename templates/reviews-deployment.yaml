@@ -55,10 +55,12 @@ spec:
               containerPort: {{ .Values.service.reviews.port }}
               protocol: TCP
           livenessProbe:
-            tcpSocket:
+            httpGet:
+              path: /health
               port: http
           readinessProbe:
-            tcpSocket:
+            httpGet:
+              path: /health
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
