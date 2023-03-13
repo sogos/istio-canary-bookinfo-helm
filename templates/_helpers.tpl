@@ -99,6 +99,7 @@ Reviews labels
 {{ include "bookinfo.labels" . }}
 role: reviews
 version: v1
+service.istio.io/canonical-name: bookinfo-reviews
 {{- end }}
 
 
@@ -118,6 +119,7 @@ Reviews labels
 {{ include "bookinfo.labels" . }}
 role: reviews
 version: v2
+service.istio.io/canonical-name: bookinfo-reviews
 {{- end }}
 
 
@@ -138,6 +140,7 @@ Reviews labels
 {{ include "bookinfo.labels" . }}
 role: reviews
 version: v3
+service.istio.io/canonical-name: bookinfo-reviews
 {{- end }}
 
 
