@@ -47,6 +47,7 @@ Selector labels
 */}}
 {{- define "bookinfo.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "bookinfo.name" . }}
+app: {{ include "bookinfo.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
