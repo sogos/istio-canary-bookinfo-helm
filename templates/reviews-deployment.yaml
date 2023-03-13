@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "bookinfo.fullname" . }}-reviews
+  name: {{ include "bookinfo.fullname" . }}-reviews-v1
   labels:
     {{- include "bookinfo.reviews.labels" . | nindent 4 }}
 spec:
