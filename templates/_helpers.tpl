@@ -69,6 +69,15 @@ Reviews selector labels
 {{- define "bookinfo.reviews.selectorLabelsV1" -}}
 {{ include "bookinfo.selectorLabels" . }}
 role: reviews
+{{- end }}
+
+
+{{/*
+Reviews selector labels
+*/}}
+{{- define "bookinfo.reviews.selectorLabelsV1" -}}
+{{ include "bookinfo.selectorLabels" . }}
+role: reviews
 version: v1
 {{- end }}
 
