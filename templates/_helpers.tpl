@@ -66,7 +66,7 @@ Create the name of the service account to use
 {{/*
 Reviews selector labels
 */}}
-{{- define "bookinfo.reviews.selectorLabelsV1" -}}
+{{- define "bookinfo.reviews.selectorLabels" -}}
 {{ include "bookinfo.selectorLabels" . }}
 role: reviews
 {{- end }}
