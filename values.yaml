@@ -6,7 +6,9 @@ replicaCount: 1
 
 image:
   reviews:
-    repository: docker.io/istio/examples-bookinfo-reviews-v1
+    repositoryV1: docker.io/istio/examples-bookinfo-reviews-v1
+    repositoryV2: docker.io/istio/examples-bookinfo-reviews-v2
+    repositoryV3: docker.io/istio/examples-bookinfo-reviews-v3
     pullPolicy: Always
     tag: 1.17.0
 

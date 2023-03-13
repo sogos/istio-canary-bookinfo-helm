@@ -66,10 +66,12 @@ Create the name of the service account to use
 {{/*
 Reviews selector labels
 */}}
-{{- define "bookinfo.reviews.selectorLabels" -}}
+{{- define "bookinfo.reviews.selectorLabelsV1" -}}
 {{ include "bookinfo.selectorLabels" . }}
 role: reviews
+version: v1
 {{- end }}
+
 
 {{/*
 Reviews labels
@@ -78,4 +80,56 @@ Reviews labels
 {{ include "bookinfo.labels" . }}
 role: reviews
 {{- end }}
+
+
+{{/*
+Reviews labels
+*/}}
+{{- define "bookinfo.reviews.labelsV1" -}}
+{{ include "bookinfo.labels" . }}
+role: reviews
+version: v1
+{{- end }}
+
+
+{{/*
+Reviews selector labels
+*/}}
+{{- define "bookinfo.reviews.selectorLabelsV2" -}}
+{{ include "bookinfo.selectorLabels" . }}
+role: reviews
+version: v2
+{{- end }}
+
+{{/*
+Reviews labels
+*/}}
+{{- define "bookinfo.reviews.labelsV2" -}}
+{{ include "bookinfo.labels" . }}
+role: reviews
+version: v2
+{{- end }}
+
+
+
+{{/*
+Reviews selector labels
+*/}}
+{{- define "bookinfo.reviews.selectorLabelsV3" -}}
+{{ include "bookinfo.selectorLabels" . }}
+role: reviews
+version: v3
+{{- end }}
+
+{{/*
+Reviews labels
+*/}}
+{{- define "bookinfo.reviews.labelsV3" -}}
+{{ include "bookinfo.labels" . }}
+role: reviews
+version: v3
+{{- end }}
+
+
+
 
