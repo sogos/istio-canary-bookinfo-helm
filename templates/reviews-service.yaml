@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "bookinfo.fullname" . }}-reviews
+  name: {{ include "bookinfo.fullname" . }}-reviews-v1
   labels:
     {{- include "bookinfo.reviews.labels" . | nindent 4 }}
 spec:
@@ -13,3 +13,35 @@ spec:
       name: http
   selector:
     {{- include "bookinfo.reviews.selectorLabelsV1" . | nindent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bookinfo.fullname" . }}-reviews-v2
+  labels:
+    {{- include "bookinfo.reviews.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.reviews.type }}
+  ports:
+    - port: {{ .Values.service.reviews.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "bookinfo.reviews.selectorLabelsV2" . | nindent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "bookinfo.fullname" . }}-reviews-v3
+  labels:
+    {{- include "bookinfo.reviews.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.reviews.type }}
+  ports:
+    - port: {{ .Values.service.reviews.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "bookinfo.reviews.selectorLabelsV3" . | nindent 4 }}
